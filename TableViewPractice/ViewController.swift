@@ -13,7 +13,14 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    
+    
+    @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var myTableView: UITableView!
+    
+    
+    
+    
     
     var superheroes = ["Batman", "Superman", "Aquaman", "Wonder Woman", "The Flash", "Spiderman"]
     var realNames = ["Bruce Wayne", "Clark Kent", "Arthur Curry", "Diana of Themyscira", "Barry Allen", "Peter Parker"]
@@ -25,6 +32,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //set tableview source and delegate to view controller
         myTableView.dataSource = self
         myTableView.delegate = self
+        editButton.tag = 0
     }
     
     
@@ -52,6 +60,39 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         self.presentViewController(myAlert, animated: true, completion: nil) //presents alert view
     }
+    
+    
+    
+    @IBAction func editButtonTapped(sender: UIBarButtonItem) {
+        
+        if editButton.tag == 0 {
+            myTableView.editing = true
+            editButton.tag = 1
+        } else {
+            myTableView.editing = false
+            editButton.tag = 0
+        }
+        
+        
+    }
+    
+    
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    
+    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        
+        let superhero = superheroes[sourceIndexPath.row]
+        superheroes.removeAtIndex(sourceIndexPath.row)
+        superheroes.insert(superhero, atIndex: destinationIndexPath.row)
+        
+        let alias = realNames[sourceIndexPath.row]
+        realNames.removeAtIndex(sourceIndexPath.row)
+        realNames.insert(alias, atIndex: destinationIndexPath.row)
+    }
+    
     
     
     //REQUIRED FUNCTIONS for TableView Protocols
