@@ -10,29 +10,26 @@ import UIKit
 
 class SuperheroClass: NSObject {
     
-    var name : String
-    var alias : String
-    var power : Int
-    var image : UIImage
+    var name : String = ""
+    var alias : String = ""
+    var power : Int = 0
+    var image : UIImage = UIImage(named: "default")!
     
     
-    init(name : String, alias : String, power : Int, image : UIImage) {
+    init(Name : String, Alias : String, Power : Int, Image : UIImage) {
         
-        self.name = name
-        self.alias = alias
-        self.power = power
-        self.image = image
         super.init()
-        
-    }
+        name = Name
+        alias = Alias
+        power = Power
+        image = Image
+}
     
-    convenience override init() {
-        self.init(name: "", alias: "", power: 0, image: UIImage(named: "default")!)
+    init(Name: String, RealName: String) {
+        super.init()
+        name = Name
+        alias = RealName
     }
-    
 
-    convenience init(name: String, alias: String) {
-        self.init(name: name, alias: alias, power: 0, image: UIImage(named: "default")!)
-    }
-    
+
 }

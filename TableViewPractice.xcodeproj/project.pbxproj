@@ -15,6 +15,7 @@
 		3B0879331C46ACEF00673CB2 /* TableViewPracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0879321C46ACEF00673CB2 /* TableViewPracticeTests.swift */; };
 		3B08793E1C46ACEF00673CB2 /* TableViewPracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B08793D1C46ACEF00673CB2 /* TableViewPracticeUITests.swift */; };
 		3B1BB5891C495733002E8D88 /* SuperheroClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1BB5881C495733002E8D88 /* SuperheroClass.swift */; };
+		3B1BB58B1C4E9E3E002E8D88 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1BB58A1C4E9E3E002E8D88 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		3B08793D1C46ACEF00673CB2 /* TableViewPracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewPracticeUITests.swift; sourceTree = "<group>"; };
 		3B08793F1C46ACEF00673CB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B1BB5881C495733002E8D88 /* SuperheroClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperheroClass.swift; sourceTree = "<group>"; };
+		3B1BB58A1C4E9E3E002E8D88 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				3B08791D1C46ACEF00673CB2 /* AppDelegate.swift */,
 				3B08791F1C46ACEF00673CB2 /* ViewController.swift */,
+				3B1BB58A1C4E9E3E002E8D88 /* DetailViewController.swift */,
 				3B1BB5881C495733002E8D88 /* SuperheroClass.swift */,
 				3B0879211C46ACEF00673CB2 /* Main.storyboard */,
 				3B0879241C46ACEF00673CB2 /* Assets.xcassets */,
@@ -265,6 +268,7 @@
 				3B0879201C46ACEF00673CB2 /* ViewController.swift in Sources */,
 				3B1BB5891C495733002E8D88 /* SuperheroClass.swift in Sources */,
 				3B08791E1C46ACEF00673CB2 /* AppDelegate.swift in Sources */,
+				3B1BB58B1C4E9E3E002E8D88 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

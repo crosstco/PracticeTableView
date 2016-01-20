@@ -45,6 +45,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="jWv-UZ-nXe" kind="show" id="Twr-sW-v28"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -82,6 +85,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="970.5" y="-218.5"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="ybl-kn-oRe">
+            <objects>
+                <viewController id="jWv-UZ-nXe" customClass="DetailViewController" customModule="TableViewPractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Zg-J5-hx4"/>
+                        <viewControllerLayoutGuide type="bottom" id="aIW-Ug-I9c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jGr-mY-G7C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="alS-MV-tyR">
+                                <rect key="frame" x="117" y="349" width="141" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Alias" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6b8-ou-GP8">
+                                <rect key="frame" x="117" y="387" width="141" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Power" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gle-Z1-oZz">
+                                <rect key="frame" x="117" y="425" width="141" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9c-9j-dBa">
+                                <rect key="frame" x="164" y="482" width="46" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="jWv-UZ-nXe" eventType="touchUpInside" id="rMs-dq-Ltq"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XYB-i0-G5E">
+                                <rect key="frame" x="87" y="72" width="200" height="250"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="alS-MV-tyR" firstAttribute="centerX" secondItem="jGr-mY-G7C" secondAttribute="centerX" id="Z5T-gt-nr8"/>
+                            <constraint firstItem="XYB-i0-G5E" firstAttribute="centerX" secondItem="jGr-mY-G7C" secondAttribute="centerX" id="huL-ua-2Ks"/>
+                            <constraint firstItem="6b8-ou-GP8" firstAttribute="centerX" secondItem="jGr-mY-G7C" secondAttribute="centerX" id="sbc-EK-gWg"/>
+                            <constraint firstItem="Gle-Z1-oZz" firstAttribute="centerX" secondItem="jGr-mY-G7C" secondAttribute="centerX" id="udd-Yi-MoJ"/>
+                            <constraint firstItem="E9c-9j-dBa" firstAttribute="centerX" secondItem="jGr-mY-G7C" secondAttribute="centerX" id="xNh-Xp-Kqa"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="aliasTF" destination="6b8-ou-GP8" id="CLo-xY-kXv"/>
+                        <outlet property="imageView" destination="XYB-i0-G5E" id="GfJ-fT-wSv"/>
+                        <outlet property="powerTF" destination="Gle-Z1-oZz" id="aEJ-Ih-rbc"/>
+                        <outlet property="superHeroTF" destination="alS-MV-tyR" id="JEJ-3m-v8x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1o6-6O-mW1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1480.5" y="-218.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZOB-0c-vQd">

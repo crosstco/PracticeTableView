@@ -22,9 +22,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     
-    var superheroes = ["Batman", "Superman", "Aquaman", "Wonder Woman", "The Flash", "Spiderman"]
-    var realNames = ["Bruce Wayne", "Clark Kent", "Arthur Curry", "Diana of Themyscira", "Barry Allen", "Peter Parker"]
-    
+    var superheroes : [SuperheroClass] = []
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +32,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         myTableView.dataSource = self
         myTableView.delegate = self
         editButton.tag = 0
+        
+        superheroes.append(SuperheroClass(Name: "Batman", Alias: "Bruce Wayne", Power: 70, Image: UIImage(named: "default")!))
+        superheroes.append(SuperheroClass(Name: "Superman", Alias: "Clark Kent", Power: 99, Image: UIImage(named: "default")!))
+        superheroes.append(SuperheroClass(Name: "Aquaman", Alias: "Arthur Curry", Power: 75, Image: UIImage(named: "default")!))
+        superheroes.append(SuperheroClass(Name: "Wonder Woman", Alias: "Diana of Themyscila", Power: 90, Image: UIImage(named: "default")!))
+        superheroes.append(SuperheroClass(Name: "The Flash", Alias: "Barry Allen", Power: 80, Image: UIImage(named: "default")!))
+        superheroes.append(SuperheroClass(Name: "Spiderman", Alias: "Peter Parker", Power: 70, Image: UIImage(named: "default")!))
+
+
     }
     
     
@@ -52,8 +60,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let addAction = UIAlertAction(title: "Add", style: .Default) { (add) -> Void in
             let superHeroTF = myAlert.textFields![0] as UITextField
             let aliasTF = myAlert.textFields![1] as UITextField
-            self.superheroes.append(superHeroTF.text!)
-            self.realNames.append(aliasTF.text!)
+            self.superheroes.append(SuperheroClass(Name: superHeroTF.text!, RealName: aliasTF.text!))
             self.myTableView.reloadData()
         }
         myAlert.addAction(addAction)
@@ -86,11 +93,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let superhero = superheroes[sourceIndexPath.row]
         superheroes.removeAtIndex(sourceIndexPath.row)
-        superheroes.insert(superhero, atIndex: destinationIndexPath.row)
         
-        let alias = realNames[sourceIndexPath.row]
-        realNames.removeAtIndex(sourceIndexPath.row)
-        realNames.insert(alias, atIndex: destinationIndexPath.row)
+        superheroes.insert(superhero, atIndex: destinationIndexPath.row)
     }
     
     
@@ -102,8 +106,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let myCell = myTableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
         
         //sets properties of the cell
-        myCell.textLabel?.text = superheroes[indexPath.row]
-        myCell.detailTextLabel?.text = realNames[indexPath.row]
+        myCell.textLabel?.text = superheroes[indexPath.row].name
+        myCell.detailTextLabel?.text = superheroes[indexPath.row].alias
         
         return myCell
     }
@@ -118,7 +122,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         if editingStyle == .Delete {
             superheroes.removeAtIndex(indexPath.row)
-            realNames.removeAtIndex(indexPath.row)
             myTableView.reloadData()
         }
     }
